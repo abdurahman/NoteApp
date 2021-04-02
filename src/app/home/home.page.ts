@@ -28,4 +28,14 @@ export class HomePage {
 
     this.note = ''
   }
+
+  deleteNote(i) {
+    this.notes.splice(i, 1);
+    localStorage.setItem('notes', JSON.stringify(this.notes))
+  }
+
+  deleteAll(){
+    this.notes = [];
+    localStorage.setItem('notes', JSON.stringify(this.notes));
+  }
 }

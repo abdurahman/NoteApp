@@ -23,8 +23,8 @@
       <ion-button expand="block" fill="outline" (click)="addNotes()">
         <ion-icon name="add-outline"></ion-icon>&nbsp; Add Notes
       </ion-button>
-      <ion-button expand="block" fill="outline">
-        <ion-icon name="trash-outline" color="danger"></ion-icon>&nbsp; Delete
+      <ion-button expand="block" fill="outline" (click)="deleteAll()">
+        <ion-icon name="trash-outline" color="danger" ></ion-icon>&nbsp; Delete
         Notes
       </ion-button>
     </div>
@@ -34,6 +34,9 @@
     <ion-list>
       <ion-item *ngFor="let note of notes, let i = index">
         <p>{{note.title}}</p>
+        <ion-button slot="end" fill="clear" (click)="deleteNote(i)">
+          <ion-icon name="trash-outline" ></ion-icon>
+        </ion-button>
       </ion-item>
     </ion-list>
   </div>
